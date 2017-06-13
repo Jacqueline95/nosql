@@ -1,0 +1,13 @@
+{
+  "name": "mongodbjs",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular-datetime-input": "^5.1.2",
+    "body-parser": "~1.13.2",
+    "cors": "~2.8.3",
+    "express": "~4.13.1",
+    "method-override": "^2.1.2",
+    "mongodb": "^2.2.28",
+    "mongoose": "~4.4"
+  }
+}
