@@ -23,10 +23,10 @@ function ContentHandler (db) {
         "use strict";
 
         var tag = req.params.hashtag;
-        posts.getByHashtag(tag, 10, function(err, results) {
+        var numlim = req.params.lim;
+        posts.getByHashtag(tag, numlim, function(err, results) {
             "use strict";
-            console.log('this is a single post -->>'+results); 
-    
+            
             if(err) return res.send(500, err.message);
                 console.log('GET /hashtags')
                 res.status(200).jsonp(results);
@@ -37,7 +37,8 @@ function ContentHandler (db) {
         "use strict";
 
         var numrw = req.params.num;
-        posts.getRetweets(numrw,function(err, results) {
+        var numlim = req.params.lim;
+        posts.getRetweets(numrw, numlim, function(err, results) {
             "use strict";
     
             if(err) return res.send(500, err.message);
@@ -50,13 +51,13 @@ function ContentHandler (db) {
 
         var min = req.params.minDate;
         var max = req.params.maxDate;
-        console.log(min);
-        posts.getByCreated(min,max,function(err, results) {
+        var numlim = req.params.lim;
+        posts.getByCreated(min, max, numlim, function(err, results) {
             "use strict";
     
             if(err) return res.send(500, err.message);
                 console.log('GET /created')
-                res.status(200).jsonp(results);
+                res.status(200).send(results);
             });
     }
 

@@ -1,6 +1,6 @@
 {
     "couchbase": {
-        "server": "192.168.1.102",
-        "bucket": "prueba"
+        "server": "192.168.1.102,192.168.1.101",
+        "bucket": "db_tweets"
     }
 }

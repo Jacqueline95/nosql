@@ -7,11 +7,11 @@ module.exports = exports = function(app, db) {
 
     app.get('/alltweets/:numeroTweets', handler.findAll);
 
-    app.get('/hashtags/:hashtag', handler.findByHash);
+    app.get('/hashtags/:hashtag&:lim', handler.findByHash);
 
-    app.get('/retweets/:num', handler.findByRetweets);
+    app.get('/retweets/:num&:lim', handler.findByRetweets);
 
-    app.get('/created/:minDate&:maxDate', handler.findByCreated);
+    app.get('/created/:minDate&:maxDate&:lim', handler.findByCreated);
 
     app.use(ErrorHandler);
 }

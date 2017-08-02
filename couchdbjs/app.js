@@ -7,11 +7,11 @@ var methodOverride = require("method-override");
 var bodyParser = require('body-parser');
 var cors = require('cors');
 
-var databaseUrl = "prueba";
-//var databaseUrl = "base_tw";
+//var databaseUrl = "prueba";
+var databaseUrl = "replica-tweets";
 
+var connection = new(cradle.Connection)('http://192.168.1.102', 5984, {
 //var connection = new(cradle.Connection)('http://192.168.1.102', 5984, {
-var connection = new(cradle.Connection)('http://localhost', 5984, {
       auth: { username: 'Admin', password: 'Admin' }
   });
 
