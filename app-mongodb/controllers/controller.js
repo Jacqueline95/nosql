@@ -19,7 +19,7 @@ function controller($scope, request) {
 
 	$scope.getAllHashtags = function(){
 		var start = new Date();
-		request.searchHashtag($scope.a.hash).then(function (data){
+		request.searchHashtag($scope.a.hash,$scope.a.lim).then(function (data){
       		console.log(data.data);
 			$scope.posts=data.data;
 			$scope.posts.exist=1;
@@ -30,7 +30,7 @@ function controller($scope, request) {
 
 	$scope.getAllRetweets = function(){
 		var start = new Date();
-		request.searchNumRetweet($scope.a.numre).then(function (data){
+		request.searchNumRetweet($scope.a.numre,$scope.a.lim).then(function (data){
       		console.log(data.data);
 			$scope.posts=data.data;
 			$scope.posts.exist=1;
@@ -45,7 +45,7 @@ function controller($scope, request) {
 		var last = new Date ($scope.a.lastdate);
 		$scope.initialdate = initial.getFullYear()+"-"+(initial.getMonth()+1)+"-"+initial.getDate(); 
 		$scope.lastdate =  last.getFullYear()+"-"+(last.getMonth()+1)+"-"+last.getDate();
-		request.searchCreated($scope.initialdate,$scope.lastdate).then(function (data){
+		request.searchCreated($scope.initialdate,$scope.lastdate,$scope.a.lim).then(function (data){
       		console.log(data.data);
 			$scope.posts=data.data;
 			$scope.posts.exist=1;

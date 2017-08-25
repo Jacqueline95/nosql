@@ -8,15 +8,15 @@ angular.module('services', [])
 				return global;
 			},
 			searchHashtag : function(hash){
-				global = $http.get(path+'hashtags/'+hash);
+				global = $http.get(path+'hashtags/'+hash+"&"+lim);
 				return global;
 			},
 			searchNumRetweet : function(numre){
-				global = $http.get(path+'retweets/'+numre);
+				global = $http.get(path+'retweets/'+numre+"&"+lim);
 				return global;
 			},
 			searchCreated : function(date_1,date_2){
-				global = $http.get(path+'created/'+date_1+"&"+date_2);
+				global = $http.get(path+'created/'+date_1+"&"+date_2+"&"+lim);
 				return global;
 			}
 		}

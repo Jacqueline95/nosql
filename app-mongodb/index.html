@@ -100,12 +100,14 @@
 							</div>
 							<div class="input-group" ng-show="hash" >
 								<input type="text" ng-model="a.hash" class="form-control" placeholder="# HASHTAG">
+								<input type="number" ng-model="a.lim" class="form-control" placeholder="LIMITE DE REGISTROS">
 								<span class="input-group-btn">
 									<button type="submit" class="btn btn-primary" ng-click="getAllHashtags()">BUSCAR</button>
 								</span>
 							</div>
 							<div class="input-group" ng-show="retweet" >
 								<input type="text" ng-model="a.numre" class="form-control" placeholder="# DE RETWEETS">
+								<input type="number" ng-model="a.lim" class="form-control" placeholder="LIMITE DE REGISTROS">
 								<span class="input-group-btn">
 									<button type="submit" class="btn btn-primary" ng-click="getAllRetweets()">BUSCAR</button>
 								</span>
@@ -113,6 +115,7 @@
 							<div class="input-group" ng-show="created" >
 								<input type="date" id="initialdate" ng-model="a.initialdate" class="form-control">
 								<input type="date" id="lastdate" ng-model="a.lastdate" class="form-control">
+								<input type="number" ng-model="a.lim" class="form-control" placeholder="LIMITE DE REGISTROS">
 								<span class="input-group-btn">
 									<button type="submit" class="btn btn-primary" ng-click="getAllCreated()">BUSCAR</button>
 								</span>
